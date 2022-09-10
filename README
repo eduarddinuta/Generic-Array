@@ -1,0 +1,33 @@
+   Programul implementeaza un vector generic si operatii de baza pe acesta.
+Aceste operatii sunt: add_last, add_at, print, find si delete_at, fiecare
+avand o functie corespunzatoare. Programul foloseste 3 tipuri de date, fiecare
+avand doua siruri de caractere si doi intregi din biblioteca inttypes.h. De
+asemenea este memorat si tipul de date, dar si lungimea acesteia pentru a 
+ne putea deplasa prin vectorul generic folosing aritmetica cu pointeri. 
+Memoria este alocata odata cu parsarea comenzilor, intr-un mod eficient, exact
+cat avem nevoie pentru fiecare tip de date, tratand si posibilele erori de 
+alocare. Daca la un moment dat se produce o eroare de alocare a memorie, este
+afisat un mesaj de eroare si executia programului este oprita.
+   La primirea comenzii insert este apelata functia de build_data care
+parseaza toata linia comenzii si construieste argumentele. Apoi cu ajutorul
+functiei add_last noul element este adaugat la finalul vectorului, care va fi
+realocat cu memoria exacta de care are nevoie de fiecare data.
+  Comanda insert_at este similara comenzii insert, doar ca inserarea se va face
+la pozitia data de variabila index, prin functia add_at. Daca indexul este 
+invalid se va afisa un mesaj de eroare si se va parasi functia. Daca este 
+valid se va realoca vectorul cu memoria necesara, vechile date vor fi shiftate
+la dreapta, si noile date vor fi introduse.
+  Comanda delete_at sterge elementul din vector de la o pozitie data, prin
+intermediul functiei delete_at. Daca indexul este invalid se va afisa un mesaj
+de eroare si se va parasi functia. Daca este valid se vor shifta la stanga
+datele de la dreapta indexului si se va realoca vectorul pentru a elibera
+memoria stearsa.
+  Comenzile print si find afiseaza informatii ale elementelor din vector.
+Comanda print afiseaza informatiile tuturor datelor din vector, iar find 
+doar informatiile de la un index specific. Este parcurs vectorul, folosind
+dimensiunea fiecarui tip de date stocata in headerul acestuia, in campul len.
+Apoi este apelata functia de print_info ce foloseste alte 3 functii specifice
+pentru fiecare dintre cele 3 tipuri de date.
+  Comanda exit duce la oprirea executiei programului, iar toata memoria folosita
+este dealocata, folosind functia free_all.
+  
